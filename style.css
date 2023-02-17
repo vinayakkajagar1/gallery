@@ -1,0 +1,81 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+  }
+  
+  #wrapper{
+    height:100vh;
+    overflow-x:hidden;
+    overflow-y:auto;
+  }
+  
+  .container{
+    height:100%; 
+    max-width:1200px;/*content can expand till 1200px after that it will not*/
+    margin:0 auto;/*left and right margin will equal,so that your content will be in between*/
+    padding:20px;
+  }
+  
+  .container h1{/*is container ke under h1 pe lagao*/
+    margin: 20px 100px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+  }
+  
+  .gallery{
+    display: flex;
+    flex-wrap: wrap;/*if not given then all image will be in one row*/
+    justify-content: space-between;
+  }
+  
+  
+  .card {
+    width:32%;/*32+32+32=96 , other 4% used for spacing*/
+    position:relative;/*to place text on card ,later used*/
+    margin-bottom: 20px;
+    border-radius: 10px;/*card border rounded*/
+    overflow: hidden;
+  }
+   
+  .card img{
+    
+    width:100%;/*width will be equal to parent card*/
+    height:100%;
+    filter: grayscale(100%);/*images will be black n white*/
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+  }
+  
+  .card:hover {
+    transform: scale(1.03);/*image will be big*/
+    transition: 0.5s;/*take 1.03 sec to big*/
+    filter: drop-shadow(0 0 10px #333);
+  }
+  
+  
+  .card:hover img {
+    filter: grayscale(0%); /*greyscale will be zero*/
+  }
+  
+  .card figcaption{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;
+    height: 20%;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;/*it will be 100% transparent , no visible*/
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(255, 255, 255, 0) 100%);
+    transition: 0.3s;
+  }
+  
+  .card:hover figcaption {
+    opacity: 1;
+    transform: scale(1.03);
+  }  
